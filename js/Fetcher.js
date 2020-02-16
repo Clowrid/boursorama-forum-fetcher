@@ -14,38 +14,46 @@ function loadDataFromBoursorama(societe) {
         const nombreDeResultatParSociete = 7;
 
         // Récupration des données depuis le site de boursorama
-        $.get(baseUrl + "/bourse/forum/1r" + societe.code + "/", function (data) {
 
-            let urlData = $.parseHTML(data);
-            let datas = $(urlData);
-            let topics = findTopics(datas);
-            let dateLastMessage = findDateLastMessage(datas);
-            let numeroMessage = 0;
+        $.ajax({
+            headers: { "Accept": "text/html"},
+            type: 'GET',
+            url: baseUrl + "/bourse/forum/1r" + societe.code + "/",
+            crossDomain: true,
+            beforeSend: function(xhr){
+                xhr.withCredentials = true;
+            },
+            success: function(data, textStatus, request){
+                let urlData = $.parseHTML(data);
+                let datas = $(urlData);
+                let topics = findTopics(datas);
+                let dateLastMessage = findDateLastMessage(datas);
+                let numeroMessage = 0;
 
-            societe.name = findCompanyName(datas);
-            societe.variation = findCompanyVariation(datas);
+                societe.name = findCompanyName(datas);
+                societe.variation = findCompanyVariation(datas);
 
-            $.each(topics, function (idx, item) {
+                $.each(topics, function (idx, item) {
 
-                let newTopic = new Topic();
-                let topic = $(item);
-                $.each(topic.find('a[href]'), function (idx, link) {
-                    if($(link).text() !== '1' && $(link).text() !== '2' && $(link).text() !== '3') {
-                        newTopic.linkUrl = baseUrl + $(link).attr("href");
-                        newTopic.title = $(link).text();
-                        newTopic.date = getDateLastMessage(dateLastMessage, numeroMessage);
+                    let newTopic = new Topic();
+                    let topic = $(item);
+                    $.each(topic.find('a[href]'), function (idx, link) {
+                        if($(link).text() !== '1' && $(link).text() !== '2' && $(link).text() !== '3') {
+                            newTopic.linkUrl = baseUrl + $(link).attr("href");
+                            newTopic.title = $(link).text();
+                            newTopic.date = getDateLastMessage(dateLastMessage, numeroMessage);
+                        }
+                    });
+
+                    numeroMessage = numeroMessage + 2;
+                    societe.addTopic(newTopic);
+
+                    // On limite le nombre de résultat par société
+                    if (numeroMessage > (nombreDeResultatParSociete * 2)) {
+                        return false;
                     }
-                });
-
-                numeroMessage = numeroMessage + 2;
-                societe.addTopic(newTopic);
-
-                // On limite le nombre de résultat par société
-                if (numeroMessage > (nombreDeResultatParSociete * 2)) {
-                    return false;
-                }
-
-            })
+                })
+            }
         }).done(function () {
             TemplateBuilder.build(societe);
             resolve(societe);
