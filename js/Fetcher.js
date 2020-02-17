@@ -11,7 +11,7 @@ function loadDataFromBoursorama(societe) {
     return new Promise(function (resolve) {
         // Configuration
         const corsRemoverUrl = "https://cors-anywhere.herokuapp.com/";
-        const baseUrl = corsRemoverUrl+"https://www.boursorama.com";
+        const baseUrl = "https://www.boursorama.com";
         const nombreDeResultatParSociete = 7;
 
         // Récupration des données depuis le site de boursorama
@@ -19,7 +19,7 @@ function loadDataFromBoursorama(societe) {
         $.ajax({
             headers: { "Accept": "text/html"},
             type: 'GET',
-            url: baseUrl + "/bourse/forum/1r" + societe.code + "/",
+            url: corsRemoverUrl+baseUrl + "/bourse/forum/1r" + societe.code + "/",
             crossDomain: true,
             beforeSend: function(xhr){
                 xhr.withCredentials = true;
