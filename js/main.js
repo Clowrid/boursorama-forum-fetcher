@@ -16,10 +16,8 @@ $(document).ready(async function() {
     });
 
     listeSociete = await Promise.all(listePromesse);
-
+    $('.loader').remove();
     console.log(listeSociete);
-
-
 });
 
 
