@@ -5,7 +5,7 @@ import Societe from './Societe.js';
 
 $(document).ready(async function() {
 
-    let societeCodes = ['AURW','PFP','PLI','PAMUN','PFLY','PCARM','PCOV', 'PCOVH','PGFC','EPCBOT','PMERY','PIMDA'];
+    let societeCodes = ['AURW','PFP','PAMUN','PFLY','PCARM','PGFC','PIMDA','PEN'];
     let listeSociete = [];
     let listePromesse = [];
 
