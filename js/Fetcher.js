@@ -17,7 +17,7 @@ function loadDataFromBoursorama(societe) {
         // Récupration des données depuis le site de boursorama
 
         $.ajax({
-            headers: { "Accept": "text/html"},
+            headers: {'X-Requested-With': 'XMLHttpRequest'},
             type: 'GET',
             url: corsRemoverUrl+baseUrl + "/bourse/forum/1r" + societe.code + "/",
             crossDomain: true,
