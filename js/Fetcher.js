@@ -10,7 +10,7 @@ function loadDataFromBoursorama(societe) {
 
     return new Promise(function (resolve) {
         // Configuration
-        const corsRemoverUrl = "https://cors-anywhere.herokuapp.com/";
+        const corsRemoverUrl = "https://cors-anywhere-clow.herokuapp.com/";
         const baseUrl = "https://www.boursorama.com";
         const nombreDeResultatParSociete = 7;
 
