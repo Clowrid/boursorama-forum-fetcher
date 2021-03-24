@@ -25,11 +25,13 @@ function loadDataFromBoursorama(societe) {
                 xhr.withCredentials = true;
             },
             success: function(data, textStatus, request){
+               
+                let urlData = $.parseHTML(data);
+                let datas = $(urlData);
                 console.log("--- Raw data ---");
                 console.log(datas);
                 console.log("----------------");
-                let urlData = $.parseHTML(data);
-                let datas = $(urlData);
+
                 let topics = findTopics(datas);
                 let dateLastMessage = findDateLastMessage(datas);
                 let numeroMessage = 0;
