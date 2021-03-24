@@ -64,11 +64,19 @@ function loadDataFromBoursorama(societe) {
 }
 
 function findCompanyName(datas) {
-    return $(datas.find("a.c-faceplate__company-link")).text().trim();
+    let companyNameData = $(datas.find("a.c-faceplate__company-link"));
+    let companyName = companyNameData.text().trim();
+    if (!companyNameData) {
+        console.log('Error while loading company name : '+companyNameData);
+    }
 }
 
 function findCompanyVariation(datas) {
-    return parseFloat($(datas.find("span.c-instrument.c-instrument--variation")).text());
+    let companyVariationData = $(datas.find("span.c-instrument.c-instrument--variation")).text();
+    let companyVariation = parseFloat(companyVariationData);
+    if (isNaN(companyVariation)) {
+        console.log('Error while loading company variation : '+companyVariationData);
+    }
 }
 
 function findTopics(datas) {
