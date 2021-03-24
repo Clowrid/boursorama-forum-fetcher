@@ -101,8 +101,8 @@ function getDateLastMessage(dateLastMessage, numeroMessage) {
 }
 
 function cleanFloat(floatToclean) {
-    floatToclean = floatToclean.text().replace('%','');
-    floatToclean = floatToclean.text().replace('+','');
-    floatToclean = floatToclean.text().replace('-','');
+    floatToclean = floatToclean.replace('%','');
+    floatToclean = floatToclean.replace('+','');
+    floatToclean = floatToclean.replace('-','');
     return floatToclean;
 }
