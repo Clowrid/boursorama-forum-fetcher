@@ -25,6 +25,9 @@ function loadDataFromBoursorama(societe) {
                 xhr.withCredentials = true;
             },
             success: function(data, textStatus, request){
+                console.log("--- Raw data ---");
+                console.log(datas);
+                console.log("----------------");
                 let urlData = $.parseHTML(data);
                 let datas = $(urlData);
                 let topics = findTopics(datas);
@@ -75,7 +78,7 @@ function findCompanyName(datas) {
 
 function findCompanyVariation(datas) {
     let companyVariationData = $(datas.find("span.c-instrument.c-instrument--variation"));
-    let companyVariation = parseFloat(companyVariationData.text());
+    let companyVariation = parseFloat(cleanFloat(companyVariationData.text()));
     if (isNaN(companyVariation)) {
         console.log('Error while loading company variation : ');
         console.log(companyVariationData);
@@ -93,4 +96,11 @@ function findDateLastMessage(datas) {
 
 function getDateLastMessage(dateLastMessage, numeroMessage) {
     return $(dateLastMessage[numeroMessage]).text();
+}
+
+function cleanFloat(floatToclean) {
+    floatToclean = floatToclean.text().replace('%','');
+    floatToclean = floatToclean.text().replace('+','');
+    floatToclean = floatToclean.text().replace('-','');
+    return floatToclean;
 }
