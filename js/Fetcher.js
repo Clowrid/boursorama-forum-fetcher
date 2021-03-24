@@ -66,16 +66,18 @@ function loadDataFromBoursorama(societe) {
 function findCompanyName(datas) {
     let companyNameData = $(datas.find("a.c-faceplate__company-link"));
     let companyName = companyNameData.text().trim();
-    if (!companyNameData) {
-        console.log('Error while loading company name : '+companyNameData);
+    if (!companyName) {
+        console.log('Error while loading company name : ');
+        console.log(companyNameData);
     }
 }
 
 function findCompanyVariation(datas) {
-    let companyVariationData = $(datas.find("span.c-instrument.c-instrument--variation")).text();
-    let companyVariation = parseFloat(companyVariationData);
+    let companyVariationData = $(datas.find("span.c-instrument.c-instrument--variation"));
+    let companyVariation = parseFloat(companyVariationData.text());
     if (isNaN(companyVariation)) {
-        console.log('Error while loading company variation : '+companyVariationData);
+        console.log('Error while loading company variation : ');
+        console.log(companyVariationData);
     }
 }
 
