@@ -70,6 +70,7 @@ function findCompanyName(datas) {
         console.log('Error while loading company name : ');
         console.log(companyNameData);
     }
+    return companyName;
 }
 
 function findCompanyVariation(datas) {
@@ -79,6 +80,7 @@ function findCompanyVariation(datas) {
         console.log('Error while loading company variation : ');
         console.log(companyVariationData);
     }
+    return companyVariation;
 }
 
 function findTopics(datas) {
