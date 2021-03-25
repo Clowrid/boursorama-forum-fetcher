@@ -28,9 +28,6 @@ function loadDataFromBoursorama(societe) {
                
                 let urlData = $.parseHTML(data);
                 let datas = $(urlData);
-                console.log("--- Raw data ---");
-                console.log(datas);
-                console.log("----------------");
 
                 let topics = findTopics(datas);
                 let dateLastMessage = findDateLastMessage(datas);
@@ -102,7 +99,6 @@ function getDateLastMessage(dateLastMessage, numeroMessage) {
 
 function cleanFloat(floatToclean) {
     floatToclean = floatToclean.replace('%','');
-    floatToclean = floatToclean.replace('+','');
-    floatToclean = floatToclean.replace('-','');
+    
     return floatToclean;
 }
