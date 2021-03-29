@@ -6,7 +6,7 @@ export {build};
 
 function build(societe) {
     // Ajout d'un bloc dédiée à la société dans l'interface
-    let blocSociete = '<div class="col-xl-4 bloc-societe bloc-societe-'+societe.code+'"><div class="content"><h3>'+societe.name+' '+formatCompanyVariation(societe.variation)+'</h3>'+'</div></div>';
+    let blocSociete = '<div class="col-xl-4 bloc-societe bloc-societe-'+societe.code+'"><div class="content"><h3>'+societe.getName()+' '+formatCompanyVariation(societe.variation)+'</h3>'+'</div></div>';
     $(blocSociete).appendTo($('#links'));
 
     for(let topic of societe.topics) {
@@ -21,5 +21,9 @@ function formatDateLastMessage(dateMessage) {
 }
 
 function formatCompanyVariation(variation) {
+    if (isNaN(variation)) {
+        return '<span></span>';
+    }
+    
     return (variation > 0) ? '<span class="up">' + variation + '%</span>' : '<span class="down">' + variation + '%</span>';
 }

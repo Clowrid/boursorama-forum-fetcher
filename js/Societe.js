@@ -12,5 +12,17 @@ export default class Societe {
         this.topics.push(topic);
     }
 
+    /**
+     * If company name can not be fetch, use the company code without prefix instead
+     * @returns {String} name
+     */
+    getName() {
+        if(!this.name) {
+            return this.code.substring(1);
+        }
+
+        return this.name;
+    }
+
 
 }
