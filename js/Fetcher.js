@@ -41,7 +41,7 @@ function loadDataFromBoursorama(societe) {
                     let newTopic = new Topic();
                     let topic = $(item);
                     $.each(topic.find('a[href]'), function (idx, link) {
-                        if($(link).text() !== '1' && $(link).text() !== '2' && $(link).text() !== '3') {
+                        if($(link).text() !== '1' && $(link).text() !== '2' && $(link).text() !== '3' && $(link).prop('title') == 'Voir le sujet') {
                             newTopic.linkUrl = baseUrl + $(link).attr("href");
                             newTopic.title = $(link).text();
                             newTopic.date = getDateLastMessage(dateLastMessage, numeroMessage);
