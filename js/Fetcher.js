@@ -1,6 +1,7 @@
 import * as TemplateBuilder from "./TemplateBuilder.js";
 import Societe from './Societe.js';
 import Topic from "./Topic.js";
+import 'dotenv/config'
 
 
 export {loadDataFromBoursorama};
@@ -10,7 +11,7 @@ function loadDataFromBoursorama(societe) {
 
     return new Promise(function (resolve) {
         // Configuration
-        const corsRemoverUrl = process.env.CORSREMOVEURL;
+        const corsRemoverUrl = "https://cors-anywhere-clow.herokuapp.com/";
         const baseUrl = "https://www.boursorama.com";
         const nombreDeResultatParSociete = 7;
 
