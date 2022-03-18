@@ -4,6 +4,36 @@ import Topic from "./Topic.js";
 
 
 export {loadDataFromBoursorama};
+export {loadConfig};
+
+
+function loadConfig() {
+
+    let config = '';
+    return new Promise(function (resolve) {
+        // Configuration
+        const baseUrl = "/config";
+
+
+        $.ajax({
+            headers: {'X-Requested-With': 'XMLHttpRequest'},
+            type: 'GET',
+            url: "/config",
+            crossDomain: true,
+            beforeSend: function(xhr){
+                xhr.withCredentials = true;
+            },
+            success: function(data, textStatus, request){
+                config = data;
+            }
+        }).done(function () {
+            console.log('--- config ---');
+            console.log(config);
+            console.log('--------------');
+            resolve(config);
+        });
+    })
+}
 
 
 function loadDataFromBoursorama(societe) {
