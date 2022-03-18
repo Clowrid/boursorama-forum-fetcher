@@ -7,7 +7,7 @@ $(document).ready(async function() {
     // call config url to get env variables into a json
     let configPromise = Fetcher.loadConfig();
     let config = await Promise.resolve(configPromise);
-    let societeCodes = config.SOCIETES.split('');
+    let societeCodes = config.SOCIETES.split(',');
     let listeSociete = [];
     let listePromesse = [];
 
