@@ -4,7 +4,7 @@ import Societe from './Societe.js';
 
 $(document).ready(async function() {
 
-    window.fetch('/config').then((function(result) {console.log(result)}));
+    window.fetch('/config').then((function(result) {console.log(result.text())}));
     let societeCodes = process.env.SOCIETES.split('');
     let listeSociete = [];
     let listePromesse = [];
