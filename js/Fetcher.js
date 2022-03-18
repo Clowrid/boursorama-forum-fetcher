@@ -1,7 +1,6 @@
 import * as TemplateBuilder from "./TemplateBuilder.js";
 import Societe from './Societe.js';
 import Topic from "./Topic.js";
-import 'dotenv/config'
 
 
 export {loadDataFromBoursorama};
