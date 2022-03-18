@@ -4,6 +4,7 @@ import Societe from './Societe.js';
 
 $(document).ready(async function() {
 
+    window.fetch('/config').then((function(result) {console.log(result)}));
     let societeCodes = process.env.SOCIETES.split('');
     let listeSociete = [];
     let listePromesse = [];
@@ -17,6 +18,7 @@ $(document).ready(async function() {
     listeSociete = await Promise.all(listePromesse);
     $('.loader').remove();
     console.log(listeSociete);
+
 });
 
 
