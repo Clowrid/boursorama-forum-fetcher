@@ -1,7 +1,7 @@
 import * as Fetcher from './Fetcher.js';
 import * as TemplateBuilder from './TemplateBuilder.js'
 import Societe from './Societe.js';
-import 'dotenv/config'
+require('dotenv').config()
 
 $(document).ready(async function() {
 
