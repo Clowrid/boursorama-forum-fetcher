@@ -1,4 +1,3 @@
-require('dotenv').config()
 let express = require('express');
 let app = express();
 
@@ -8,6 +7,10 @@ app.use('/img',express.static('img'));
 
 app.get('/',function(req,res){
     res.sendFile(__dirname+'/index.html');
+});
+
+app.get('/config',function(req,res){
+    res.send(process.env);
 });
 
 let port = process.env.PORT;
