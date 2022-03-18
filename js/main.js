@@ -1,11 +1,11 @@
 import * as Fetcher from './Fetcher.js';
 import * as TemplateBuilder from './TemplateBuilder.js'
 import Societe from './Societe.js';
-
+import 'dotenv/config'
 
 $(document).ready(async function() {
 
-    let societeCodes = ['AURW','PTTE','PORA','PCOFA','PEN','PSCR','PMMT','PNK','PGFC','PAMUN'];
+    let societeCodes = process.env.SOCIETES.split('');
     let listeSociete = [];
     let listePromesse = [];
 
