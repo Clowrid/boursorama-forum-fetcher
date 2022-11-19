@@ -9,6 +9,10 @@ app.get('/',function(req,res){
     res.sendFile(__dirname+'/index.html');
 });
 
+app.get('/config',function(req,res){
+    res.send(process.env);
+});
+
 let port = process.env.PORT;
 if (port == null || port == "") {
     port = 8000;

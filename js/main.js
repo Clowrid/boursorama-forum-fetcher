@@ -2,10 +2,12 @@ import * as Fetcher from './Fetcher.js';
 import * as TemplateBuilder from './TemplateBuilder.js'
 import Societe from './Societe.js';
 
-
 $(document).ready(async function() {
 
-    let societeCodes = ['AURW','PFP','PAMUN','PCOFA','PCARM','PGFC','PEN','PSCR','PCNP'];
+    // call config url to get env variables into a json
+    let configPromise = Fetcher.loadConfig();
+    let config = await Promise.resolve(configPromise);
+    let societeCodes = config.SOCIETES.split(',');
     let listeSociete = [];
     let listePromesse = [];
 

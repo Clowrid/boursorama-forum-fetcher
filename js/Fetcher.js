@@ -4,6 +4,36 @@ import Topic from "./Topic.js";
 
 
 export {loadDataFromBoursorama};
+export {loadConfig};
+
+
+function loadConfig() {
+
+    let config = '';
+    return new Promise(function (resolve) {
+        // Configuration
+        const baseUrl = "/config";
+
+
+        $.ajax({
+            headers: {'X-Requested-With': 'XMLHttpRequest'},
+            type: 'GET',
+            url: "/config",
+            crossDomain: true,
+            beforeSend: function(xhr){
+                xhr.withCredentials = true;
+            },
+            success: function(data, textStatus, request){
+                config = data;
+            }
+        }).done(function () {
+            console.log('--- config ---');
+            console.log(config);
+            console.log('--------------');
+            resolve(config);
+        });
+    })
+}
 
 
 function loadDataFromBoursorama(societe) {
@@ -25,8 +55,10 @@ function loadDataFromBoursorama(societe) {
                 xhr.withCredentials = true;
             },
             success: function(data, textStatus, request){
+               
                 let urlData = $.parseHTML(data);
                 let datas = $(urlData);
+
                 let topics = findTopics(datas);
                 let dateLastMessage = findDateLastMessage(datas);
                 let numeroMessage = 0;
@@ -39,7 +71,7 @@ function loadDataFromBoursorama(societe) {
                     let newTopic = new Topic();
                     let topic = $(item);
                     $.each(topic.find('a[href]'), function (idx, link) {
-                        if($(link).text() !== '1' && $(link).text() !== '2' && $(link).text() !== '3') {
+                        if($(link).text() !== '1' && $(link).text() !== '2' && $(link).text() !== '3' && $(link).prop('title') == 'Voir le sujet') {
                             newTopic.linkUrl = baseUrl + $(link).attr("href");
                             newTopic.title = $(link).text();
                             newTopic.date = getDateLastMessage(dateLastMessage, numeroMessage);
@@ -64,11 +96,23 @@ function loadDataFromBoursorama(societe) {
 }
 
 function findCompanyName(datas) {
-    return $(datas.find("a.c-faceplate__company-link")).text().trim();
+    let companyNameData = $(datas.find("a.c-faceplate__company-link"));
+    let companyName = companyNameData.text().trim();
+    if (!companyName) {
+        console.log('Error while loading company name : ');
+        console.log(companyNameData);
+    }
+    return companyName;
 }
 
 function findCompanyVariation(datas) {
-    return parseFloat($(datas.find("span.c-instrument.c-instrument--variation")).text());
+    let companyVariationData = $(datas.find("span.c-instrument.c-instrument--variation"));
+    let companyVariation = parseFloat(cleanFloat(companyVariationData.text()));
+    if (isNaN(companyVariation)) {
+        console.log('Error while loading company variation : ');
+        console.log(companyVariationData);
+    }
+    return companyVariation;
 }
 
 function findTopics(datas) {
@@ -81,4 +125,10 @@ function findDateLastMessage(datas) {
 
 function getDateLastMessage(dateLastMessage, numeroMessage) {
     return $(dateLastMessage[numeroMessage]).text();
+}
+
+function cleanFloat(floatToclean) {
+    floatToclean = floatToclean.replace('%','');
+    
+    return floatToclean;
 }
