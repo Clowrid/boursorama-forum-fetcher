@@ -8,12 +8,13 @@ $(document).ready(async function() {
     let configPromise = Fetcher.loadConfig();
     let config = await Promise.resolve(configPromise);
     let societeCodes = config.SOCIETES.split(',');
+    let corsProxyURL = config.CORSREMOVEURL;
     let listeSociete = [];
     let listePromesse = [];
 
     societeCodes.forEach(function(societeCode) {
         let societe = new Societe(societeCode);
-        let newSociete = Fetcher.loadDataFromBoursorama(societe)
+        let newSociete = Fetcher.loadDataFromBoursorama(societe,corsProxyURL)
         listePromesse.push(newSociete);
     });
 
