@@ -36,11 +36,11 @@ function loadConfig() {
 }
 
 
-function loadDataFromBoursorama(societe) {
+function loadDataFromBoursorama(societe,corsProxyURL) {
 
     return new Promise(function (resolve) {
         // Configuration
-        const corsRemoverUrl = "https://cors-anywhere-clow.herokuapp.com/";
+        const corsRemoverUrl = corsProxyURL;
         const baseUrl = "https://www.boursorama.com";
         const nombreDeResultatParSociete = 7;
 
