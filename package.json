@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "dotenv": "^16.0.0",
-    "express": "^4.17.1"
+    "express": "^4.17.3"
   },
   "keywords": [],
   "author": "Bruno FAUGEROUX",
