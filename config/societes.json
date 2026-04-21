@@ -1,0 +1,251 @@
+[
+  {
+    "code": "TTE",
+    "displayName": "TotalEnergies",
+    "boursoramaCode": "1rPTTE",
+    "yahooTicker": "TTE.PA",
+    "wikipediaTitle": "TotalEnergies"
+  },
+  {
+    "code": "ORA",
+    "displayName": "Orange",
+    "boursoramaCode": "1rPORA",
+    "yahooTicker": "ORA.PA",
+    "wikipediaTitle": "Orange_(entreprise)"
+  },
+  {
+    "code": "COFA",
+    "displayName": "Coface",
+    "boursoramaCode": "1rPCOFA",
+    "yahooTicker": "COFA.PA",
+    "wikipediaTitle": "Coface"
+  },
+  {
+    "code": "EN",
+    "displayName": "Bouygues",
+    "boursoramaCode": "1rPEN",
+    "yahooTicker": "EN.PA",
+    "wikipediaTitle": "Bouygues"
+  },
+  {
+    "code": "SCR",
+    "displayName": "SCOR",
+    "boursoramaCode": "1rPSCR",
+    "yahooTicker": "SCR.PA",
+    "wikipediaTitle": "Scor"
+  },
+  {
+    "code": "MMT",
+    "displayName": "M6 Métropole Télévision",
+    "boursoramaCode": "1rPMMT",
+    "yahooTicker": "MMT.PA",
+    "wikipediaTitle": "Métropole_Télévision"
+  },
+  {
+    "code": "NK",
+    "displayName": "Imerys",
+    "boursoramaCode": "1rPNK",
+    "yahooTicker": "NK.PA",
+    "wikipediaTitle": "Imerys"
+  },
+  {
+    "code": "AMUN",
+    "displayName": "Amundi",
+    "boursoramaCode": "1rPAMUN",
+    "yahooTicker": "AMUN.PA",
+    "wikipediaTitle": "Amundi"
+  },
+  {
+    "code": "COV",
+    "displayName": "Covivio",
+    "boursoramaCode": "1rPCOV",
+    "yahooTicker": "COV.PA",
+    "wikipediaTitle": "Covivio"
+  },
+  {
+    "code": "CBOT",
+    "displayName": "CBO Territoria",
+    "boursoramaCode": "1rEPCBOT",
+    "yahooTicker": "CBOT.PA",
+    "wikipediaTitle": "CBo_Territoria"
+  },
+  {
+    "code": "NXI",
+    "displayName": "Nexity",
+    "boursoramaCode": "1rPNXI",
+    "yahooTicker": "NXI.PA",
+    "wikipediaTitle": "Nexity"
+  },
+  {
+    "code": "RUI",
+    "displayName": "Rubis",
+    "boursoramaCode": "1rPRUI",
+    "yahooTicker": "RUI.PA",
+    "wikipediaTitle": "Rubis_(entreprise)"
+  },
+  {
+    "code": "GFC",
+    "displayName": "Gecina",
+    "boursoramaCode": "1rPGFC",
+    "yahooTicker": "GFC.PA",
+    "wikipediaTitle": "Gecina"
+  },
+  {
+    "code": "ICAD",
+    "displayName": "Icade",
+    "boursoramaCode": "1rPICAD",
+    "yahooTicker": "ICAD.PA",
+    "wikipediaTitle": "Icade"
+  },
+  {
+    "code": "URW",
+    "displayName": "Unibail-Rodamco-Westfield",
+    "boursoramaCode": "1rPURW",
+    "yahooTicker": "URW.PA",
+    "wikipediaTitle": "Unibail-Rodamco-Westfield"
+  },
+  {
+    "code": "ALBIO",
+    "displayName": "Biosynex",
+    "boursoramaCode": "1rPALBIO",
+    "yahooTicker": "ALBIO.PA",
+    "wikipediaTitle": "Biosynex"
+  },
+  {
+    "code": "JCQ",
+    "displayName": "Jacquet Metals",
+    "boursoramaCode": "1rPJCQ",
+    "yahooTicker": "JCQ.PA",
+    "wikipediaTitle": "Jacquet_Metals"
+  },
+  {
+    "code": "GRVO",
+    "displayName": "Graines Voltz",
+    "boursoramaCode": "1rPGRVO",
+    "yahooTicker": "GRVO.PA"
+  },
+  {
+    "code": "ENGI",
+    "displayName": "Engie",
+    "boursoramaCode": "1rPENGI",
+    "yahooTicker": "ENGI.PA",
+    "wikipediaTitle": "Engie"
+  },
+  {
+    "code": "TFI",
+    "displayName": "TF1",
+    "boursoramaCode": "1rPTFI",
+    "yahooTicker": "TFI.PA",
+    "wikipediaTitle": "Groupe_TF1"
+  },
+  {
+    "code": "KOF",
+    "displayName": "Kaufman & Broad",
+    "boursoramaCode": "1rPKOF",
+    "yahooTicker": "KOF.PA",
+    "wikipediaTitle": "Kaufman_%26_Broad"
+  },
+  {
+    "code": "CS",
+    "displayName": "AXA",
+    "boursoramaCode": "1rPCS",
+    "yahooTicker": "CS.PA",
+    "wikipediaTitle": "Axa"
+  },
+  {
+    "code": "VCT",
+    "displayName": "Vicat",
+    "boursoramaCode": "1rPVCT",
+    "yahooTicker": "VCT.PA",
+    "wikipediaTitle": "Vicat_(entreprise)"
+  },
+  {
+    "code": "PEUG",
+    "displayName": "Peugeot Invest",
+    "boursoramaCode": "1rPPEUG",
+    "yahooTicker": "PEUG.PA",
+    "wikipediaTitle": "Peugeot_Invest"
+  },
+  {
+    "code": "ALLDL",
+    "displayName": "Groupe LDLC",
+    "boursoramaCode": "1rPALLDL",
+    "yahooTicker": "ALLDL.PA",
+    "wikipediaTitle": "LDLC.com"
+  },
+  {
+    "code": "RF",
+    "displayName": "Eurazeo",
+    "boursoramaCode": "1rPRF",
+    "yahooTicker": "RF.PA",
+    "wikipediaTitle": "Eurazeo"
+  },
+  {
+    "code": "ALPDX",
+    "displayName": "Prodways Group",
+    "boursoramaCode": "1rPALPDX",
+    "yahooTicker": "ALPDX.PA",
+    "wikipediaTitle": "Prodways"
+  },
+  {
+    "code": "IDIP",
+    "displayName": "IDI",
+    "boursoramaCode": "1rPIDIP",
+    "yahooTicker": "IDIP.PA"
+  },
+  {
+    "code": "MF",
+    "displayName": "Wendel",
+    "boursoramaCode": "1rPMF",
+    "yahooTicker": "MF.PA",
+    "wikipediaTitle": "Wendel_(entreprise)"
+  },
+  {
+    "code": "DPAM",
+    "displayName": "Docks des Pétroles d'Ambès",
+    "boursoramaCode": "1rPDPAM",
+    "yahooTicker": "DPAM.PA"
+  },
+  {
+    "code": "COVH",
+    "displayName": "Covivio Hotels",
+    "boursoramaCode": "1rPCOVH",
+    "yahooTicker": "COVH.PA",
+    "wikipediaTitle": "Covivio_Hotels"
+  },
+  {
+    "code": "ABCA",
+    "displayName": "ABC Arbitrage",
+    "boursoramaCode": "1rPABCA",
+    "yahooTicker": "ABCA.PA",
+    "wikipediaTitle": "ABC_arbitrage"
+  },
+  {
+    "code": "HCO",
+    "displayName": "HighCo",
+    "boursoramaCode": "1rPHCO",
+    "yahooTicker": "HCO.PA",
+    "wikipediaTitle": "HighCo"
+  },
+  {
+    "code": "TEP",
+    "displayName": "Teleperformance",
+    "boursoramaCode": "1rPTEP",
+    "yahooTicker": "TEP.PA",
+    "wikipediaTitle": "Teleperformance"
+  },
+  {
+    "code": "MERY",
+    "displayName": "Mercialys",
+    "boursoramaCode": "1rPMERY",
+    "yahooTicker": "MERY.PA",
+    "wikipediaTitle": "Mercialys"
+  },
+  {
+    "code": "PUB",
+    "displayName": "Publicis",
+    "boursoramaCode": "1rPPUB",
+    "yahooTicker": "PUB.PA",
+    "wikipediaTitle": "Publicis"
+  }
+]

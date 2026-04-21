@@ -1,26 +1,46 @@
-import * as Fetcher from './Fetcher.js';
-import * as TemplateBuilder from './TemplateBuilder.js'
-import Societe from './Societe.js';
+import * as api from './api.js';
+import { renderCard, renderForumTopics, renderForumError } from './render.js';
 
-$(document).ready(async function() {
+const container = document.getElementById('cards');
 
-    // call config url to get env variables into a json
-    let configPromise = Fetcher.loadConfig();
-    let config = await Promise.resolve(configPromise);
-    let societeCodes = config.SOCIETES.split(',');
-    let corsProxyURL = config.CORSREMOVEURL;
-    let listeSociete = [];
-    let listePromesse = [];
+function showError(message) {
+  container.innerHTML = '';
+  const p = document.createElement('p');
+  p.className = 'app-error';
+  p.textContent = message;
+  container.appendChild(p);
+}
 
-    societeCodes.forEach(function(societeCode) {
-        let societe = new Societe(societeCode);
-        let newSociete = Fetcher.loadDataFromBoursorama(societe,corsProxyURL)
-        listePromesse.push(newSociete);
-    });
+async function loadForum(code, card) {
+  const listNode = card.querySelector('.forum-list');
+  try {
+    const topics = await api.getForum(code);
+    renderForumTopics(listNode, topics);
+  } catch {
+    renderForumError(listNode);
+  }
+}
 
-    listeSociete = await Promise.all(listePromesse);
-    $('.loader').remove();
-    console.log(listeSociete);
-});
+async function main() {
+  let societes, quotes;
+  try {
+    [societes, quotes] = await Promise.all([api.getSocietes(), api.getQuotes()]);
+  } catch (err) {
+    showError(`Erreur de chargement : ${err.message}`);
+    container.setAttribute('aria-busy', 'false');
+    return;
+  }
 
+  const quoteByCode = new Map(quotes.map((q) => [q.code, q]));
+  container.innerHTML = '';
 
+  for (const societe of societes) {
+    const card = renderCard(societe, quoteByCode.get(societe.code));
+    container.appendChild(card);
+    loadForum(societe.code, card);
+  }
+
+  container.setAttribute('aria-busy', 'false');
+}
+
+main();

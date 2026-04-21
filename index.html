@@ -1,26 +1,19 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-        <script type="module" src='./js/main.js'></script>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" href="./css/style.css" media="all"/>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-        <link rel="icon" type="image/png" href="./img/fav.png">
-        <link rel="shortcut icon" type="image/x-icon" href="./img/fav.ico">
-        <title> Agrégateur de forum </title>
-    </head>
-
-    <body>
-        <div class="loader d-flex justify-content-center">
-            <div class="spinner-border" role="status">
-                <span class="sr-only">Loading...</span>
-            </div>
-        </div>
-        <div class="container-fluid">
-            <div id="links" class="row"></div>
-        </div>
-    </body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard boursier</title>
+    <link rel="icon" type="image/png" href="./img/fav.png" />
+    <link rel="shortcut icon" type="image/x-icon" href="./img/fav.ico" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script type="module" src="./js/main.js"></script>
+  </head>
+  <body>
+    <header class="app-header">
+      <h1>Dashboard boursier</h1>
+      <p class="subtitle">Cours, variations et forum Boursorama</p>
+    </header>
+    <main id="cards" class="cards" aria-busy="true"></main>
+  </body>
 </html>
-
