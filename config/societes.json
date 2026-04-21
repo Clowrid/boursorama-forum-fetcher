@@ -247,5 +247,12 @@
     "boursoramaCode": "1rPPUB",
     "yahooTicker": "PUB.PA",
     "wikipediaTitle": "Publicis"
+  },
+  {
+    "code": "FDJ",
+    "displayName": "FDJ United",
+    "boursoramaCode": "1rPFDJU",
+    "yahooTicker": "FDJU.PA",
+    "wikipediaTitle": "FDJ_United"
   }
 ]
