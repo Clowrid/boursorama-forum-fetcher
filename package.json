@@ -12,8 +12,7 @@
   },
   "dependencies": {
     "cheerio": "^1.0.0",
-    "express": "^4.21.2",
-    "yahoo-finance2": "^3.14.0"
+    "express": "^4.21.2"
   },
   "keywords": [],
   "author": "Bruno FAUGEROUX",

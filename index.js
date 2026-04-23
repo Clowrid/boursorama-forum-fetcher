@@ -2,7 +2,6 @@ const express = require('express');
 const path = require('path');
 
 const societes = require('./lib/societes');
-const yahoo = require('./lib/yahoo');
 const wikipedia = require('./lib/wikipedia');
 const boursorama = require('./lib/boursorama');
 
@@ -34,7 +33,7 @@ app.get('/api/societes/quotes', async (_req, res) => {
   const quotes = await Promise.all(
     list.map(async (s) => {
       try {
-        const quote = await yahoo.getQuote(s.yahooTicker);
+        const quote = await boursorama.getQuote(s.boursoramaCode);
         return { code: s.code, ok: true, ...quote };
       } catch (err) {
         return { code: s.code, ok: false, error: err.message };
